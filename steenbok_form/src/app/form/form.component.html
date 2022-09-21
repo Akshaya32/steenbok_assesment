@@ -1,3 +1,7 @@
+<ngx-spinner   bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="ball-scale-multiple"></ngx-spinner>
 <div class="user-form row align-items-center">
   <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
     <div class="">
@@ -29,7 +33,7 @@
       <input id="input-images" type="file" accept="image/*" (change)="onFileAdded($event)">
     </label>
     <div class="form-footer fl-right">
-      <button class="secondary-btn" >RESET</button>
+      <button class="secondary-btn" type="reset" (click) = "formReset()">RESET</button>
       <button type="submit" class="primary-btn" [disabled] = !userForm.valid >SUBMIT</button>
     </div>
   </form>
