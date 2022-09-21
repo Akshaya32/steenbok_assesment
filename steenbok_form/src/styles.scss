@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.fl-left{
+    float: left;
+}
+.fl-right{
+    float: right;
+}
+// Button Styles
+.primary-btn{
+    background-color:#F69F98;
+    border: none;
+    font-weight: 600;
+    padding: 4px 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    margin: 15px 0;
+}
+.primary-btn:hover:enabled{
+    border-color: #F9476C;
+}
+.primary-btn:disabled{
+    background-color: #FAF2E8;
+    cursor: not-allowed;
+}
+.secondary-btn{
+    background-color:#c6afaf;
+    border: none;
+    font-weight: 600;
+    padding: 4px 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    margin: 15px 0;
+}
+//File Upload Button Style
+input[type="file"] {
+    display: none;
+}
+.custom-file-input::before {
+    content: '+ADD IMAGES';
+    cursor: pointer;
+    background-color:#F69F98;
+    border: none;
+    font-weight: 600;
+    padding: 4px 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    margin: 15px 0;
+}
+//Custom Error Message
+.error_message{
+    color: red;
+    font-style: italic;
+    font-size: 0.9rem;
+}
