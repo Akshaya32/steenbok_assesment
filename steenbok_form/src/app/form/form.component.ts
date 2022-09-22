@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormArray, FormBuilder } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 import { emailConfig } from 'src/assets/constants';
 import { NgxSpinnerService } from "ngx-spinner";
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -57,9 +57,14 @@ export class FormComponent {
       Body: "Received a mail from " + this.formValues.firstName.value + " " + this.formValues.lastName.value + " - " + this.formValues.description.value,
       Attachments: this.images.value
     }).then((message: any) => {
-      this.formReset();
-      this.spinner.hide();
-      this.openSnackBar("E-Mail sent Successfully" , "Close")
+      if(message === "OK"){
+        this.formReset();
+        this.spinner.hide();
+        this.openSnackBar("E-Mail sent Successfully" , "Close")
+      }
+      else {
+        window.alert("Error occured sending e-mail")
+      }
     });
   }
   formReset() {
@@ -67,7 +72,9 @@ export class FormComponent {
     this.images.clear();
   }
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
+    this._snackBar.open(message, action,  {
+      duration: 3000
+    });
   }
 }
 
