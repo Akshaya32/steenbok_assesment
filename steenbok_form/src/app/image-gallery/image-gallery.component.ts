@@ -5,12 +5,8 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './image-gallery.component.html',
   styleUrls: ['./image-gallery.component.scss']
 })
-export class ImageGalleryComponent implements OnInit {
+export class ImageGalleryComponent {
   @Input() imageList: any
   constructor() { }
-
-  ngOnInit(): void {
-    console.log(this.imageList)
-  }
 
 }

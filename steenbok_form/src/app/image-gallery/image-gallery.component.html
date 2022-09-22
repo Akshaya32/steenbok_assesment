@@ -1,8 +1,8 @@
-<div class="image-gallery">
-    <hr>
-    <h3 class="gallery-header">Image Gallery</h3>
-    <hr>
-    <span *ngFor = "let image of imageList">
-        <img class = "uploaded_image" src= "{{image}}">
-    </span>
+<div class="image-gallery">     
+    <h3 class="gallery-header">Gallery</h3>
+    <div class="gallery-body">
+        <span *ngFor = "let image of imageList">
+            <img class = "uploaded_image" src= "{{image.data}}">
+        </span>
+    </div>
 </div>

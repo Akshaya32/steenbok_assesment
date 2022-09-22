@@ -1,3 +1,27 @@
-.user-form{
+.form-parent {
+    min-height: 90vh;
+    display: flex;
+    .left_col {
+        flex: 2;
+    }
+
+    .right_col {
+        flex: 1;
+        margin: 10px;
+        border: 18px solid #FDD5C8;
+        border-radius: 10px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .form-parent {
+        display: block;
+    }
+}
+.user-form {
+    width: 60%;
     margin: 15px;
+}
+.form-control:focus {
+    border-color: #FDD5C8;
+    box-shadow: 0 0 0 0.2rem #FDD5C8
 }

@@ -1,14 +1,22 @@
 .image-gallery{
+    max-height: 75vh;
+    margin: 1rem 2rem;
+    overflow: auto;
+    scroll-behavior: smooth;
     .gallery-header{
-        // border-bottom: 1px solid #b4b4b4be;
-        // border-top: 1px solid #b4b4b4be;
-        color: #F9476C;
+        color: rgb(255, 116, 116);
         text-align: center;
     }
-    .uploaded_image{
-        border: 2px solid #F9476C;
-        display: inline-block;
-        width: 200px;
-        height: 200px;
+    .gallery-body{
+        .uploaded_image{
+            border-radius: 12px;
+            max-width: 45%;
+            min-width: 40%;
+            margin: 5px;
+            padding: 10px;
+            height: 150px;
+            box-shadow: rgba(255, 131, 131, 0.35) 1.95px 1.95px 2.6px;
+        }
     }
+
 }

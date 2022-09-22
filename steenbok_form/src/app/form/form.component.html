@@ -2,43 +2,47 @@
 size="medium"
 color="#fff"
 type="ball-scale-multiple"></ngx-spinner>
-<div class="user-form row align-items-center">
-  <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
-    <div class="">
-      <label for="first-name" class="form-label">First Name </label>
-      <input id="first-name" class="form-control" type="text" formControlName="firstName">
-      <div class="error_message" *ngIf="formValues['firstName'].errors?.['required'] && (formValues['firstName'].touched)">
-        Please enter your first name.
-    </div>
-    </div>  
-    <label for="last-name" class="form-label ">Last Name </label>
-    <input id="last-name" class="form-control" type="text" formControlName="lastName">
-    <div class="error_message" *ngIf="formValues['lastName'].errors?.['required'] && (formValues['lastName'].touched)">
-      Please enter your last name.
-    </div>
-    <label for="description" class="form-label">Description </label>
-    <input id="description" class="form-control" type="text" formControlName="description">
-    <div class="error_message" *ngIf="formValues['description'].errors?.['required'] && (formValues['description'].touched)">
-      Please enter description.
-    </div>
-    <label for="email-field" class="form-label">Email </label>
-    <input id="email-field" class="form-control" type="email" formControlName="emailAddress">
-    <div class="error_message" *ngIf="formValues['emailAddress'].errors?.['required'] && (formValues['emailAddress'].touched)">
-      Please enter e-mail Id.
-    </div>
-    <div class="error_message" *ngIf="formValues['emailAddress'].errors?.['email'] && (formValues['emailAddress'].touched)">
-      Please ensure e-mail Id is of the form somebody@example.com.
-    </div>
-    <label for="input-images" class="primary-btn">+ADD IMAGES
-      <input id="input-images" type="file" accept="image/*" (change)="onFileAdded($event)">
-    </label>
-    <div class="form-footer fl-right">
-      <button class="secondary-btn" type="reset" (click) = "formReset()">RESET</button>
-      <button type="submit" class="primary-btn" [disabled] = !userForm.valid >SUBMIT</button>
-    </div>
-  </form>
-  <div *ngIf = "imageList.length > 0" class="image-gallery">
+<div class="form-parent">
+  <div class="user-form row left_col">
+    <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+      <div class="">
+        <label for="first-name" class="form-label">First Name </label>
+        <input id="first-name" class="form-control" type="text" formControlName="firstName">
+        <div class="error_message" *ngIf="formValues['firstName'].errors?.['required'] && (formValues['firstName'].touched)">
+          Please enter your first name.
+      </div>
+      </div>  
+      <label for="last-name" class="form-label ">Last Name </label>
+      <input id="last-name" class="form-control" type="text" formControlName="lastName">
+      <div class="error_message" *ngIf="formValues['lastName'].errors?.['required'] && (formValues['lastName'].touched)">
+        Please enter your last name.
+      </div>
+      <label for="description" class="form-label">Description </label>
+      <input id="description" class="form-control" type="text" formControlName="description">
+      <div class="error_message" *ngIf="formValues['description'].errors?.['required'] && (formValues['description'].touched)">
+        Please enter description.
+      </div>
+      <label for="email-field" class="form-label">Email </label>
+      <input id="email-field" class="form-control" type="email" formControlName="emailAddress">
+      <div class="error_message" *ngIf="formValues['emailAddress'].errors?.['required'] && (formValues['emailAddress'].touched)">
+        Please enter e-mail Id.
+      </div>
+      <div class="error_message" *ngIf="formValues['emailAddress'].errors?.['email'] && (formValues['emailAddress'].touched)">
+        Please ensure e-mail Id is of the form somebody@example.com.
+      </div>
+      <label for="input-images" class="primary-btn">+ADD IMAGES
+        <input id="input-images" type="file" accept="image/*" (change)="onFileAdded($event)">
+      </label>
+      <div class="form-footer fl-right">
+        <button class="secondary-btn" type="reset" (click) = "formReset()">RESET</button>
+        <button type="submit" class="primary-btn" [disabled] = !userForm.valid >SUBMIT</button>
+      </div>
+    </form>
+  </div>
+  <div class = "right_col">
     <app-image-gallery [imageList] = "imageList"></app-image-gallery>
   </div>
 </div>
+
+
 
