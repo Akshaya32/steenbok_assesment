@@ -31,7 +31,7 @@ type="ball-scale-multiple"></ngx-spinner>
         Please ensure e-mail Id is of the form somebody@example.com.
       </div>
       <label for="input-images" class="primary-btn">+ADD IMAGES
-        <input id="input-images" type="file" accept="image/*" (change)="onFileAdded($event)">
+        <input id="input-images" type="file" accept="image/*" formArrayName="images" (change)="onFileAdded($event)">
       </label>
       <div class="form-footer fl-right">
         <button class="secondary-btn" type="reset" (click) = "formReset()">RESET</button>
@@ -40,7 +40,7 @@ type="ball-scale-multiple"></ngx-spinner>
     </form>
   </div>
   <div class = "right_col">
-    <app-image-gallery [imageList] = "imageList"></app-image-gallery>
+    <app-image-gallery [imageList] = "images.value"></app-image-gallery>
   </div>
 </div>
 

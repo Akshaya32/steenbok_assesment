@@ -5,4 +5,7 @@
             <img class = "uploaded_image" src= "{{image.data}}">
         </span>
     </div>
+    <div class="sample_image" *ngIf = "imageList.length === 0">
+        <h5>Sample Image</h5> 
+        <img src= {{sampleImage}}>
 </div>

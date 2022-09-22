@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 *{
     margin: 0px;
     padding: 0px;
@@ -81,4 +82,17 @@ div::-webkit-scrollbar {
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: rgb(255, 160, 160); 
+}
+//Snack Bar Theme
+.mat-snack-bar-container{
+    border: 3px solid #B1D7B4;
+    border-radius: 7px;
+    background-color: white;
+    color: #B1D7B4; 
+    .mat-simple-snack-bar-content{
+        font-size: 0.95rem;
+    }
+    .mat-button-wrapper{
+        color: #36b57a;
+    }
 }
